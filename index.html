@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoveConnect - AI Dating</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff5f7;
+      color: #29202a;
+      text-align: center;
+    }
+    header {
+      background: #e83e70;
+      color: white;
+      padding: 22px 12px;
+    }
+    header h1 { margin: 0; }
+    main { padding: 35px 18px; }
+    .card {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    button {
+      border: 0;
+      border-radius: 25px;
+      padding: 13px 22px;
+      margin: 6px;
+      background: #e83e70;
+      color: white;
+      font-size: 16px;
+    }
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    footer { padding: 20px; color: #777; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>❤️ LoveConnect</h1>
+    <p>Meet someone special</p>
+  </header>
+
+  <main>
+    <h2>Find your connection</h2>
+    <p>A new way to meet people and start conversations.</p>
+
+    <section class="card">
+      <h2>Create your profile</h2>
+      <input id="name" placeholder="Your first name">
+      <input id="age" type="number" placeholder="Your age (18+)">
+      <button onclick="createProfile()">Get Started</button>
+      <p id="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>💬 AI Dating Companion</h2>
+      <p>Chat with a virtual dating companion.</p>
+      <button onclick="alert('AI chat will be connected in a later step!')">
+        Start AI Chat
+      </button>
+    </section>
+
+    <section class="card">
+      <h2>⭐ Premium Bundles</h2>
+      <p>Unlock more features as your dating journey grows.</p>
+      <p>Payments will be added securely in a later step.</p>
+    </section>
+  </main>
+
+  <footer>LoveConnect · Meet, connect, and discover</footer>
+
+  <script>
+    function createProfile() {
+      const name = document.getElementById('name').value.trim();
+      const age = Number(document.getElementById('age').value);
+      const message = document.getElementById('message');
+
+      if (!name || !Number.isFinite(age) || age < 18) {
+        message.textContent = 'Please enter your name and confirm you are 18 or older.';
+        return;
+      }
+
+      message.textContent = 'Welcome, ' + name +
+        '! Your demo profile is ready.';
+    }
+  </script>
+</body>
+</html>
